@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.google.samples.apps.sunflower.R
-import com.google.samples.apps.sunflower.data.db.model.Plant
+import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
 
 @OptIn(ExperimentalMaterialApi::class, ExperimentalGlideComposeApi::class)
 @Composable

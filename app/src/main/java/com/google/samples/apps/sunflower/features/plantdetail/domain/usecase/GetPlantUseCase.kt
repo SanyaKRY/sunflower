@@ -16,12 +16,12 @@
 
 package com.google.samples.apps.sunflower.features.plantdetail.domain.usecase
 
-import com.google.samples.apps.sunflower.data.db.model.Plant
-import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepositoryInterface
+import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
+import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetPlantUseCase @Inject constructor(private val repository: PlantRepositoryInterface) {
+class GetPlantUseCase @Inject constructor(private val repository: PlantRepository) {
 
     fun execute(plantId: String): Flow<Plant> {
         return repository.getPlant(plantId)

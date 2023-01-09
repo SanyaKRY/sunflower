@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.api
+package com.google.samples.apps.sunflower.data.datasource.api
 
 import com.google.samples.apps.sunflower.BuildConfig
-import com.google.samples.apps.sunflower.data.UnsplashSearchResponse
+import com.google.samples.apps.sunflower.data.datasource.api.model.UnsplashSearchResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level

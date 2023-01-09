@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data.db
+package com.google.samples.apps.sunflower.data.datasource.db
 
 import android.content.Context
 import androidx.room.Database
@@ -26,13 +26,13 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.google.samples.apps.sunflower.data.*
-import com.google.samples.apps.sunflower.data.db.converters.Converters
-import com.google.samples.apps.sunflower.data.db.dao.GardenPlantingDao
-import com.google.samples.apps.sunflower.data.db.model.Plant
-import com.google.samples.apps.sunflower.data.db.dao.PlantDao
-import com.google.samples.apps.sunflower.data.db.model.GardenPlanting
-import com.google.samples.apps.sunflower.data.db.workers.SeedDatabaseWorker
-import com.google.samples.apps.sunflower.data.db.workers.SeedDatabaseWorker.Companion.KEY_FILENAME
+import com.google.samples.apps.sunflower.data.datasource.db.converters.Converters
+import com.google.samples.apps.sunflower.data.datasource.db.dao.GardenPlantingDao
+import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
+import com.google.samples.apps.sunflower.data.datasource.db.dao.PlantDao
+import com.google.samples.apps.sunflower.data.datasource.db.model.GardenPlanting
+import com.google.samples.apps.sunflower.data.datasource.db.workers.SeedDatabaseWorker
+import com.google.samples.apps.sunflower.data.datasource.db.workers.SeedDatabaseWorker.Companion.KEY_FILENAME
 import com.google.samples.apps.sunflower.utilities.constants.DATABASE_NAME
 import com.google.samples.apps.sunflower.utilities.constants.PLANT_DATA_FILENAME
 

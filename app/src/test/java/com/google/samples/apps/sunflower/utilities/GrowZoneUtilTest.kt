@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.sunflower.utilities
 
+import com.google.samples.apps.sunflower.utilities.constants.getZoneForLatitude
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

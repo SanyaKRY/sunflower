@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.features.plantlist.domain
+package com.google.samples.apps.sunflower.features.garden.domain
 
-import com.google.samples.apps.sunflower.data.db.model.Plant
+import com.google.samples.apps.sunflower.data.datasource.db.model.PlantAndGardenPlantings
 import kotlinx.coroutines.flow.Flow
 
-interface PlantRepositoryInterface {
+interface GardenPlantingRepository {
 
-    fun getPlants(): Flow<List<Plant>>
+    fun getPlantedGardens(): Flow<List<PlantAndGardenPlantings>>
 
-    fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): Flow<List<Plant>>
+    fun isPlanted(plantId: String): Flow<Boolean>
 
-    fun getPlant(plantId: String): Flow<Plant>
+    suspend fun createGardenPlanting(plantId: String)
 }

@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.samples.apps.sunflower.features.gallery.ui.GalleryFragment
 import com.google.samples.apps.sunflower.features.gallery.adapterpagingdata.GalleryAdapter.GalleryViewHolder
-import com.google.samples.apps.sunflower.data.UnsplashPhoto
+import com.google.samples.apps.sunflower.data.datasource.api.model.UnsplashPhoto
 import com.google.samples.apps.sunflower.databinding.ListItemPhotoBinding
 
 /**

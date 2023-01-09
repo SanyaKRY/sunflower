@@ -16,7 +16,7 @@
 
 package com.google.samples.apps.sunflower.features.garden.adapterlist.vm
 
-import com.google.samples.apps.sunflower.data.db.model.PlantAndGardenPlantings
+import com.google.samples.apps.sunflower.data.datasource.db.model.PlantAndGardenPlantings
 import java.text.SimpleDateFormat
 import java.util.Locale
 

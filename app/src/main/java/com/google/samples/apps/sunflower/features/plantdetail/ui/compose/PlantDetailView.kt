@@ -94,7 +94,7 @@ import com.google.accompanist.themeadapter.material.MdcTheme
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.features.plantdetail.ui.compose.utils.Dimens
 import com.google.samples.apps.sunflower.compose.utils.TextSnackbarContainer
-import com.google.samples.apps.sunflower.data.db.model.Plant
+import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
 import com.google.samples.apps.sunflower.databinding.ItemPlantDescriptionBinding
 import com.google.samples.apps.sunflower.features.plantdetail.ui.compose.utils.visible
 import com.google.samples.apps.sunflower.features.plantdetail.vm.PlantDetailViewModel

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data.db.workers
+package com.google.samples.apps.sunflower.data.datasource.db.workers
 
 import android.content.Context
 import android.util.Log
@@ -23,8 +23,8 @@ import androidx.work.WorkerParameters
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
-import com.google.samples.apps.sunflower.data.db.AppDatabase
-import com.google.samples.apps.sunflower.data.db.model.Plant
+import com.google.samples.apps.sunflower.data.datasource.db.AppDatabase
+import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

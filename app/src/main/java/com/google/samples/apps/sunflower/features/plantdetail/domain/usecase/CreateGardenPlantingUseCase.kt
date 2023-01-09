@@ -16,10 +16,10 @@
 
 package com.google.samples.apps.sunflower.features.plantdetail.domain.usecase
 
-import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepositoryInterface
+import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepository
 import javax.inject.Inject
 
-class CreateGardenPlantingUseCase @Inject constructor(private val repository: GardenPlantingRepositoryInterface) {
+class CreateGardenPlantingUseCase @Inject constructor(private val repository: GardenPlantingRepository) {
 
     suspend fun execute(plantId: String) {
         return repository.createGardenPlanting(plantId)

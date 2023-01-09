@@ -16,8 +16,8 @@
 
 package com.google.samples.apps.sunflower.data.repository
 
-import com.google.samples.apps.sunflower.data.db.dao.PlantDao
-import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepositoryInterface
+import com.google.samples.apps.sunflower.data.datasource.db.dao.PlantDao
+import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -28,7 +28,8 @@ import javax.inject.Singleton
  * query execution off of the main thread.
  */
 @Singleton
-class PlantRepository @Inject constructor(private val plantDao: PlantDao) : PlantRepositoryInterface {
+class PlantRepositoryImpl @Inject constructor(private val plantDao: PlantDao) :
+    PlantRepository {
 
     override fun getPlants() = plantDao.getPlants()
 
@@ -40,11 +41,11 @@ class PlantRepository @Inject constructor(private val plantDao: PlantDao) : Plan
     companion object {
 
         // For Singleton instantiation
-        @Volatile private var instance: PlantRepository? = null
+        @Volatile private var instance: PlantRepositoryImpl? = null
 
         fun getInstance(plantDao: PlantDao) =
             instance ?: synchronized(this) {
-                instance ?: PlantRepository(plantDao).also { instance = it }
+                instance ?: PlantRepositoryImpl(plantDao).also { instance = it }
             }
     }
 }

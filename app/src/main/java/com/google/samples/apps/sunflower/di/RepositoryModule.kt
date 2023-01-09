@@ -16,12 +16,12 @@
 
 package com.google.samples.apps.sunflower.di
 
-import com.google.samples.apps.sunflower.data.db.dao.GardenPlantingDao
-import com.google.samples.apps.sunflower.data.db.dao.PlantDao
-import com.google.samples.apps.sunflower.data.repository.GardenPlantingRepository
-import com.google.samples.apps.sunflower.data.repository.PlantRepository
-import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepositoryInterface
-import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepositoryInterface
+import com.google.samples.apps.sunflower.data.datasource.db.dao.GardenPlantingDao
+import com.google.samples.apps.sunflower.data.datasource.db.dao.PlantDao
+import com.google.samples.apps.sunflower.data.repository.GardenPlantingRepositoryImpl
+import com.google.samples.apps.sunflower.data.repository.PlantRepositoryImpl
+import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepository
+import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,13 +34,13 @@ class RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideGardenPlantingRepository(gardenPlantingDao: GardenPlantingDao): GardenPlantingRepositoryInterface {
-        return GardenPlantingRepository(gardenPlantingDao)
+    fun provideGardenPlantingRepository(gardenPlantingDao: GardenPlantingDao): GardenPlantingRepository {
+        return GardenPlantingRepositoryImpl(gardenPlantingDao)
     }
 
     @Singleton
     @Provides
-    fun providePlantRepository(plantDao: PlantDao): PlantRepositoryInterface {
-        return PlantRepository(plantDao)
+    fun providePlantRepository(plantDao: PlantDao): PlantRepository {
+        return PlantRepositoryImpl(plantDao)
     }
 }

@@ -16,16 +16,16 @@
 
 package com.google.samples.apps.sunflower.data.repository
 
-import com.google.samples.apps.sunflower.data.db.model.GardenPlanting
-import com.google.samples.apps.sunflower.data.db.dao.GardenPlantingDao
-import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepositoryInterface
+import com.google.samples.apps.sunflower.data.datasource.db.dao.GardenPlantingDao
+import com.google.samples.apps.sunflower.data.datasource.db.model.GardenPlanting
+import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class GardenPlantingRepository @Inject constructor(
+class GardenPlantingRepositoryImpl @Inject constructor(
     private val gardenPlantingDao: GardenPlantingDao
-) : GardenPlantingRepositoryInterface {
+) : GardenPlantingRepository {
 
     override suspend fun createGardenPlanting(plantId: String) {
         val gardenPlanting = GardenPlanting(plantId)
@@ -44,11 +44,11 @@ class GardenPlantingRepository @Inject constructor(
     companion object {
 
         // For Singleton instantiation
-        @Volatile private var instance: GardenPlantingRepository? = null
+        @Volatile private var instance: GardenPlantingRepositoryImpl? = null
 
         fun getInstance(gardenPlantingDao: GardenPlantingDao) =
             instance ?: synchronized(this) {
-                instance ?: GardenPlantingRepository(gardenPlantingDao).also { instance = it }
+                instance ?: GardenPlantingRepositoryImpl(gardenPlantingDao).also { instance = it }
             }
     }
 }

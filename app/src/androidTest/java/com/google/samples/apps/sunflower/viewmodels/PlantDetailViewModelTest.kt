@@ -21,9 +21,10 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.samples.apps.sunflower.MainCoroutineRule
-import com.google.samples.apps.sunflower.data.db.AppDatabase
-import com.google.samples.apps.sunflower.data.repository.GardenPlantingRepository
-import com.google.samples.apps.sunflower.data.repository.PlantRepository
+import com.google.samples.apps.sunflower.data.datasource.db.AppDatabase
+import com.google.samples.apps.sunflower.features.plantdetail.domain.usecase.CreateGardenPlantingUseCase
+import com.google.samples.apps.sunflower.features.plantdetail.domain.usecase.GetPlantUseCase
+import com.google.samples.apps.sunflower.features.plantdetail.domain.usecase.IsPlantedUseCase
 import com.google.samples.apps.sunflower.features.plantdetail.vm.PlantDetailViewModel
 import com.google.samples.apps.sunflower.runBlockingTest
 import com.google.samples.apps.sunflower.utilities.getValue
@@ -55,10 +56,13 @@ class PlantDetailViewModelTest {
             .around(coroutineRule)
 
     @Inject
-    lateinit var plantRepository: PlantRepository
+    lateinit var getPlantUseCase: GetPlantUseCase
 
     @Inject
-    lateinit var gardenPlantRepository: GardenPlantingRepository
+    lateinit var isPlantedUseCase: IsPlantedUseCase
+
+    @Inject
+    lateinit var createGardenPlantingUseCase: CreateGardenPlantingUseCase
 
     @Before
     fun setUp() {
@@ -70,7 +74,7 @@ class PlantDetailViewModelTest {
         val savedStateHandle: SavedStateHandle = SavedStateHandle().apply {
             set("plantId", testPlant.plantId)
         }
-        viewModel = PlantDetailViewModel(savedStateHandle, plantRepository, gardenPlantRepository)
+        viewModel = PlantDetailViewModel(savedStateHandle, getPlantUseCase, isPlantedUseCase, createGardenPlantingUseCase)
     }
 
     @After

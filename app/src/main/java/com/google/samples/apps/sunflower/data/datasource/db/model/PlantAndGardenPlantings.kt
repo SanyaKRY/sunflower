@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.features.garden.domain
+package com.google.samples.apps.sunflower.data.datasource.db.model
 
-import com.google.samples.apps.sunflower.data.db.model.PlantAndGardenPlantings
-import kotlinx.coroutines.flow.Flow
+import androidx.room.Embedded
+import androidx.room.Relation
 
-interface GardenPlantingRepositoryInterface {
+/**
+ * This class captures the relationship between a [Plant] and a user's [GardenPlanting], which is
+ * used by Room to fetch the related entities.
+ */
+data class PlantAndGardenPlantings(
+    @Embedded
+    val plant: Plant,
 
-    fun getPlantedGardens(): Flow<List<PlantAndGardenPlantings>>
-
-    fun isPlanted(plantId: String): Flow<Boolean>
-
-    suspend fun createGardenPlanting(plantId: String)
-}
+    @Relation(parentColumn = "id", entityColumn = "plant_id")
+    val gardenPlantings: List<GardenPlanting> = emptyList()
+)

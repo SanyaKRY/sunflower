@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data.db.dao
+package com.google.samples.apps.sunflower.data.datasource.db.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
-import com.google.samples.apps.sunflower.data.db.model.GardenPlanting
-import com.google.samples.apps.sunflower.data.db.model.PlantAndGardenPlantings
+import com.google.samples.apps.sunflower.data.datasource.db.model.GardenPlanting
+import com.google.samples.apps.sunflower.data.datasource.db.model.PlantAndGardenPlantings
 import kotlinx.coroutines.flow.Flow
 
 /**

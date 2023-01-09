@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data.db.model
+package com.google.samples.apps.sunflower.data.datasource.db.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

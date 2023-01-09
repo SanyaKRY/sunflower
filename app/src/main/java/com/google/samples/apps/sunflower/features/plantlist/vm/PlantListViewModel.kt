@@ -22,7 +22,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.samples.apps.sunflower.features.plantlist.ui.PlantListFragment
-import com.google.samples.apps.sunflower.data.db.model.Plant
+import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
 import com.google.samples.apps.sunflower.features.plantlist.domain.usecase.GetPlantsUseCase
 import com.google.samples.apps.sunflower.features.plantlist.domain.usecase.GetPlantsWithGrowZoneNumberUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

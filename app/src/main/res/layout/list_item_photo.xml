@@ -24,7 +24,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="photo"
-            type="com.google.samples.apps.sunflower.data.UnsplashPhoto"/>
+            type="com.google.samples.apps.sunflower.data.datasource.api.model.UnsplashPhoto"/>
     </data>
 
     <com.google.samples.apps.sunflower.features.garden.ui.view.MaskedCardView

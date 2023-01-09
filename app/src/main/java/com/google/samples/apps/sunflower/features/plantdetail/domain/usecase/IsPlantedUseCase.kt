@@ -16,11 +16,11 @@
 
 package com.google.samples.apps.sunflower.features.plantdetail.domain.usecase
 
-import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepositoryInterface
+import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class IsPlantedUseCase @Inject constructor(private val repository: GardenPlantingRepositoryInterface) {
+class IsPlantedUseCase @Inject constructor(private val repository: GardenPlantingRepository) {
 
     fun execute(plantId: String): Flow<Boolean> {
         return repository.isPlanted(plantId)

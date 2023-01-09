@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data
+package com.google.samples.apps.sunflower.data.datasource.api.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.google.samples.apps.sunflower.api.UnsplashService
+import com.google.samples.apps.sunflower.data.datasource.api.UnsplashService
+import com.google.samples.apps.sunflower.data.datasource.api.model.UnsplashPhoto
 
 private const val UNSPLASH_STARTING_PAGE_INDEX = 1
 

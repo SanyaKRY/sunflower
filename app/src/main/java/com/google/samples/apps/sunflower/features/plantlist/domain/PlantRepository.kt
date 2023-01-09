@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.data.db.converters
+package com.google.samples.apps.sunflower.features.plantlist.domain
 
-import androidx.room.TypeConverter
-import java.util.Calendar
+import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
+import kotlinx.coroutines.flow.Flow
 
-/**
- * Type converters to allow Room to reference complex data types.
- */
-class Converters {
-    @TypeConverter fun calendarToDatestamp(calendar: Calendar): Long = calendar.timeInMillis
+interface PlantRepository {
 
-    @TypeConverter fun datestampToCalendar(value: Long): Calendar =
-        Calendar.getInstance().apply { timeInMillis = value }
+    fun getPlants(): Flow<List<Plant>>
+
+    fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): Flow<List<Plant>>
+
+    fun getPlant(plantId: String): Flow<Plant>
 }

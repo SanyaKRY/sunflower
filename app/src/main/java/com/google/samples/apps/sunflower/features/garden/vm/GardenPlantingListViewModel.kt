@@ -19,7 +19,7 @@ package com.google.samples.apps.sunflower.features.garden.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.google.samples.apps.sunflower.data.db.model.PlantAndGardenPlantings
+import com.google.samples.apps.sunflower.data.datasource.db.model.PlantAndGardenPlantings
 import com.google.samples.apps.sunflower.features.garden.domain.usecase.GetPlantedGardensUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
