@@ -31,6 +31,7 @@ import androidx.test.espresso.intent.matcher.IntentMatchers.hasAction
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasType
 import androidx.test.platform.app.InstrumentationRegistry
+import com.google.samples.apps.sunflower.features.GardenActivity
 import com.google.samples.apps.sunflower.utilities.chooser
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
