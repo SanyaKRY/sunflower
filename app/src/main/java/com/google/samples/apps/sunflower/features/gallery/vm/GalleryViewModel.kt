@@ -21,14 +21,14 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.google.samples.apps.sunflower.data.datasource.api.model.UnsplashPhoto
-import com.google.samples.apps.sunflower.data.repository.UnsplashRepository
+import com.google.samples.apps.sunflower.features.gallery.domain.usecase.GetSearchResultStreamUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 @HiltViewModel
 class GalleryViewModel @Inject constructor(
-    private val repository: UnsplashRepository
+    private val getSearchResultStreamUseCase: GetSearchResultStreamUseCase
 ) : ViewModel() {
     private var currentQueryValue: String? = null
     private var currentSearchResult: Flow<PagingData<UnsplashPhoto>>? = null
@@ -36,7 +36,7 @@ class GalleryViewModel @Inject constructor(
     fun searchPictures(queryString: String): Flow<PagingData<UnsplashPhoto>> {
         currentQueryValue = queryString
         val newResult: Flow<PagingData<UnsplashPhoto>> =
-            repository.getSearchResultStream(queryString).cachedIn(viewModelScope)
+            getSearchResultStreamUseCase.execute(queryString).cachedIn(viewModelScope)
         currentSearchResult = newResult
         return newResult
     }

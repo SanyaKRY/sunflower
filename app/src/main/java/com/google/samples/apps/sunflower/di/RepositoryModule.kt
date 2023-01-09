@@ -16,10 +16,13 @@
 
 package com.google.samples.apps.sunflower.di
 
+import com.google.samples.apps.sunflower.data.datasource.api.UnsplashService
 import com.google.samples.apps.sunflower.data.datasource.db.dao.GardenPlantingDao
 import com.google.samples.apps.sunflower.data.datasource.db.dao.PlantDao
 import com.google.samples.apps.sunflower.data.repository.GardenPlantingRepositoryImpl
 import com.google.samples.apps.sunflower.data.repository.PlantRepositoryImpl
+import com.google.samples.apps.sunflower.data.repository.UnsplashRepositoryImpl
+import com.google.samples.apps.sunflower.features.gallery.domain.UnsplashRepository
 import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepository
 import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepository
 import dagger.Module
@@ -42,5 +45,11 @@ class RepositoryModule {
     @Provides
     fun providePlantRepository(plantDao: PlantDao): PlantRepository {
         return PlantRepositoryImpl(plantDao)
+    }
+
+    @Singleton
+    @Provides
+    fun provideUnsplashRepository(service: UnsplashService): UnsplashRepository {
+        return UnsplashRepositoryImpl(service)
     }
 }

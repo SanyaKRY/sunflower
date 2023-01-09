@@ -22,12 +22,14 @@ import androidx.paging.PagingData
 import com.google.samples.apps.sunflower.data.datasource.api.UnsplashService
 import com.google.samples.apps.sunflower.data.datasource.api.model.UnsplashPhoto
 import com.google.samples.apps.sunflower.data.datasource.api.paging.UnsplashPagingSource
+import com.google.samples.apps.sunflower.features.gallery.domain.UnsplashRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class UnsplashRepository @Inject constructor(private val service: UnsplashService) {
+class UnsplashRepositoryImpl @Inject constructor(private val service: UnsplashService) :
+    UnsplashRepository {
 
-    fun getSearchResultStream(query: String): Flow<PagingData<UnsplashPhoto>> {
+    override fun getSearchResultStream(query: String): Flow<PagingData<UnsplashPhoto>> {
         return Pager(
             config = PagingConfig(enablePlaceholders = false, pageSize = NETWORK_PAGE_SIZE),
             pagingSourceFactory = { UnsplashPagingSource(service, query) }
