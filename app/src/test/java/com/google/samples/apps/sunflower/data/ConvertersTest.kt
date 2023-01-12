@@ -16,7 +16,7 @@
 
 package com.google.samples.apps.sunflower.data
 
-import com.google.samples.apps.sunflower.data.datasource.db.converters.Converters
+import com.google.samples.apps.sunflower.core.db.converters.Converters
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.util.Calendar

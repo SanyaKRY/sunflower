@@ -26,9 +26,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.databinding.FragmentViewPagerBinding
-import com.google.samples.apps.sunflower.features.pager.pageradapter.MY_GARDEN_PAGE_INDEX
-import com.google.samples.apps.sunflower.features.pager.pageradapter.PLANT_LIST_PAGE_INDEX
-import com.google.samples.apps.sunflower.features.pager.pageradapter.SunflowerPagerAdapter
+import com.google.samples.apps.sunflower.features.pager.ui.pageradapter.MY_GARDEN_PAGE_INDEX
+import com.google.samples.apps.sunflower.features.pager.ui.pageradapter.PLANT_LIST_PAGE_INDEX
+import com.google.samples.apps.sunflower.features.pager.ui.pageradapter.SunflowerPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

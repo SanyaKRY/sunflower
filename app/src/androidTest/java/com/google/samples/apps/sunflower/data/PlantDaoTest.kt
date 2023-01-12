@@ -20,9 +20,9 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.google.samples.apps.sunflower.data.datasource.db.AppDatabase
-import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
-import com.google.samples.apps.sunflower.data.datasource.db.dao.PlantDao
+import com.google.samples.apps.sunflower.core.db.AppDatabase
+import com.google.samples.apps.sunflower.features.plantlist.data.datasource.db.model.Plant
+import com.google.samples.apps.sunflower.features.plantlist.data.datasource.db.dao.PlantDao
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.MatcherAssert.assertThat

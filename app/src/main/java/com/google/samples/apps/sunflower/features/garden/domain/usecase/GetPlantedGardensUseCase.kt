@@ -16,7 +16,7 @@
 
 package com.google.samples.apps.sunflower.features.garden.domain.usecase
 
-import com.google.samples.apps.sunflower.data.datasource.db.model.PlantAndGardenPlantings
+import com.google.samples.apps.sunflower.features.garden.data.db.model.PlantAndGardenPlantings
 import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

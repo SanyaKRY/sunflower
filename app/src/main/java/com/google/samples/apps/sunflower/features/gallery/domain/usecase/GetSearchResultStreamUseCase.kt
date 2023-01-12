@@ -17,7 +17,7 @@
 package com.google.samples.apps.sunflower.features.gallery.domain.usecase
 
 import androidx.paging.PagingData
-import com.google.samples.apps.sunflower.data.datasource.api.model.UnsplashPhoto
+import com.google.samples.apps.sunflower.features.gallery.data.datasource.api.model.UnsplashPhoto
 import com.google.samples.apps.sunflower.features.gallery.domain.UnsplashRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

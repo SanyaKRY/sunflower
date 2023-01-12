@@ -21,11 +21,11 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.samples.apps.sunflower.MainCoroutineRule
-import com.google.samples.apps.sunflower.data.datasource.db.AppDatabase
-import com.google.samples.apps.sunflower.features.plantdetail.domain.usecase.CreateGardenPlantingUseCase
-import com.google.samples.apps.sunflower.features.plantdetail.domain.usecase.GetPlantUseCase
-import com.google.samples.apps.sunflower.features.plantdetail.domain.usecase.IsPlantedUseCase
-import com.google.samples.apps.sunflower.features.plantdetail.vm.PlantDetailViewModel
+import com.google.samples.apps.sunflower.core.db.AppDatabase
+import com.google.samples.apps.sunflower.features.plantdetail.usecase.CreateGardenPlantingUseCase
+import com.google.samples.apps.sunflower.features.plantdetail.usecase.GetPlantUseCase
+import com.google.samples.apps.sunflower.features.plantdetail.usecase.IsPlantedUseCase
+import com.google.samples.apps.sunflower.features.plantdetail.presentation.vm.PlantDetailViewModel
 import com.google.samples.apps.sunflower.runBlockingTest
 import com.google.samples.apps.sunflower.utilities.getValue
 import com.google.samples.apps.sunflower.utilities.testPlant

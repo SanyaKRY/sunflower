@@ -16,14 +16,10 @@
 
 package com.google.samples.apps.sunflower.features.garden.domain
 
-import com.google.samples.apps.sunflower.data.datasource.db.model.PlantAndGardenPlantings
+import com.google.samples.apps.sunflower.features.garden.data.db.model.PlantAndGardenPlantings
 import kotlinx.coroutines.flow.Flow
 
 interface GardenPlantingRepository {
 
     fun getPlantedGardens(): Flow<List<PlantAndGardenPlantings>>
-
-    fun isPlanted(plantId: String): Flow<Boolean>
-
-    suspend fun createGardenPlanting(plantId: String)
 }

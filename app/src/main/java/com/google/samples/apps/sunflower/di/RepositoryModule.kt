@@ -16,14 +16,16 @@
 
 package com.google.samples.apps.sunflower.di
 
-import com.google.samples.apps.sunflower.data.datasource.api.UnsplashService
-import com.google.samples.apps.sunflower.data.datasource.db.dao.GardenPlantingDao
-import com.google.samples.apps.sunflower.data.datasource.db.dao.PlantDao
-import com.google.samples.apps.sunflower.data.repository.GardenPlantingRepositoryImpl
-import com.google.samples.apps.sunflower.data.repository.PlantRepositoryImpl
-import com.google.samples.apps.sunflower.data.repository.UnsplashRepositoryImpl
+import com.google.samples.apps.sunflower.features.gallery.data.datasource.api.UnsplashService
+import com.google.samples.apps.sunflower.features.garden.data.db.dao.GardenPlantingDao
+import com.google.samples.apps.sunflower.features.plantlist.data.datasource.db.dao.PlantDao
+import com.google.samples.apps.sunflower.features.garden.data.db.GardenPlantingRepositoryImpl
+import com.google.samples.apps.sunflower.features.plantlist.data.PlantRepositoryImpl
+import com.google.samples.apps.sunflower.features.gallery.data.repository.UnsplashRepositoryImpl
 import com.google.samples.apps.sunflower.features.gallery.domain.UnsplashRepository
 import com.google.samples.apps.sunflower.features.garden.domain.GardenPlantingRepository
+import com.google.samples.apps.sunflower.features.plantdetail.domain.GardenPlantDetailsRepository
+import com.google.samples.apps.sunflower.features.plantdetail.domain.PlantDetailsRepository
 import com.google.samples.apps.sunflower.features.plantlist.domain.PlantRepository
 import dagger.Module
 import dagger.Provides
@@ -44,6 +46,18 @@ class RepositoryModule {
     @Singleton
     @Provides
     fun providePlantRepository(plantDao: PlantDao): PlantRepository {
+        return PlantRepositoryImpl(plantDao)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGardenPlantDetailsRepository(gardenPlantingDao: GardenPlantingDao): GardenPlantDetailsRepository {
+        return GardenPlantingRepositoryImpl(gardenPlantingDao)
+    }
+
+    @Singleton
+    @Provides
+    fun providePlantDetailsRepository(plantDao: PlantDao): PlantDetailsRepository {
         return PlantRepositoryImpl(plantDao)
     }
 

@@ -17,9 +17,9 @@
 package com.google.samples.apps.sunflower.di
 
 import android.content.Context
-import com.google.samples.apps.sunflower.data.datasource.db.AppDatabase
-import com.google.samples.apps.sunflower.data.datasource.db.dao.GardenPlantingDao
-import com.google.samples.apps.sunflower.data.datasource.db.dao.PlantDao
+import com.google.samples.apps.sunflower.core.db.AppDatabase
+import com.google.samples.apps.sunflower.features.garden.data.db.dao.GardenPlantingDao
+import com.google.samples.apps.sunflower.features.plantlist.data.datasource.db.dao.PlantDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -26,7 +26,7 @@ import androidx.work.testing.SynchronousExecutor
 import androidx.work.testing.TestListenableWorkerBuilder
 import androidx.work.testing.WorkManagerTestInitHelper
 import androidx.work.workDataOf
-import com.google.samples.apps.sunflower.data.datasource.db.workers.SeedDatabaseWorker
+import com.google.samples.apps.sunflower.core.db.workers.SeedDatabaseWorker
 import com.google.samples.apps.sunflower.utilities.constants.PLANT_DATA_FILENAME
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat

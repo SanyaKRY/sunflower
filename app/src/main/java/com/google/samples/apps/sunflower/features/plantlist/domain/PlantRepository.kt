@@ -16,7 +16,7 @@
 
 package com.google.samples.apps.sunflower.features.plantlist.domain
 
-import com.google.samples.apps.sunflower.data.datasource.db.model.Plant
+import com.google.samples.apps.sunflower.features.plantlist.data.datasource.db.model.Plant
 import kotlinx.coroutines.flow.Flow
 
 interface PlantRepository {
@@ -24,6 +24,4 @@ interface PlantRepository {
     fun getPlants(): Flow<List<Plant>>
 
     fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): Flow<List<Plant>>
-
-    fun getPlant(plantId: String): Flow<Plant>
 }
